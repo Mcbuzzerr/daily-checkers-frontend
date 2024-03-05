@@ -2,7 +2,11 @@ main {
     /* padding: 150px; */
 }
 
-.slate {
+h3 {
+    text-align: center;
+}
+
+.slate.welcome {
     width: 444px;
     margin-top: 100px;
 }
@@ -13,4 +17,19 @@ main {
     padding: 2.5px 40px;
     margin-top: 10px;
     width: calc(100% - 80px);
+}
+
+#gify-pet-window {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gify-pet-window iframe {
+    border: 1px solid black;
+    height: 321px;
+    box-shadow: 7px 7px 0px black;
 }

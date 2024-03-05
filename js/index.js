@@ -14,5 +14,10 @@ window.onload = () => {
         loggedInBar.classList.remove('hidden');
         loggedOutBar.classList.add('hidden');
 
+        let iframe = document.getElementById('gify-pet-iframe');
+
+        if (getUser()["victories"] > 0) {
+            iframe.src = "https://gifypet.neocities.org/pet/pet.html?name=CoolSpot&dob=1709667193&gender=m&element=Water&pet=https%3A%2F%2Fnekkostarr.nekoweb.org%2Fdaily-checkers-frontend%2Fimg%2Fgreenchecker.gif&map=https%3A%2F%2Fnekkostarr.nekoweb.org%2Fdaily-checkers-frontend%2Fimg%2FcheckerBoardSprite.png&background=https%3A%2F%2Fnekkostarr.nekoweb.org%2Fdaily-checkers-frontend%2Fimg%2Fgray020.png&tablecolor=black&textcolor=black"
+        }
     }
 };
