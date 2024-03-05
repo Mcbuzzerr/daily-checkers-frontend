@@ -18,10 +18,16 @@ const getInviteList = async () => {
     }).then((data) => {
         document.getElementById('loading-slate').style.display = "none";
         console.log(data)
+        if (!data.hasOwnProperty("invites")) {
+            return [];
+        }
+
         return data["invites"];
     });
 
 
+    console.log(inviteList);
+    console.log(inviteList.length);
 
     for (let i = 0; i < inviteList.length; i++) {
         let invite = inviteList[i];
@@ -42,7 +48,6 @@ const getInviteList = async () => {
 
         document.getElementById('invite-container').appendChild(inviteElement);
     }
-    console.log(inviteList.length);
     if (inviteList.length == 0) {
         let inviteElement = document.createElement('div');
         inviteElement.innerHTML = `
