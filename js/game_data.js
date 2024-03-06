@@ -9,7 +9,7 @@ let Piece_inDB = {
 
 let PlayerA_inDB = {
     "id": "213123-123123-123123-123213", //Friend Code
-    "name": "Player A",
+    "username": "Player A",
     "email": "playerA@email.com",
     "password": "shhhhhhhhhhhhh",
     "victories": 1,

@@ -51,8 +51,7 @@ const handleSaveClicked = (event) => {
     }
 
     let playerIdElement = document.getElementById('player-id');
-    let playerNameField = document.getElementById('name-field');
-    let playerEmailField = document.getElementById('email-field');
+    let playerUsernameField = document.getElementById('username-field');
     let playerNewPassword = document.getElementById('new-password-field');
     let playerConfirmPassword = document.getElementById('confirm-password-field');
 
@@ -60,12 +59,8 @@ const handleSaveClicked = (event) => {
         alert('For your own security, the Confirm Password field cannot be empty.');
         return;
     }
-    if (!playerNameField.value) {
-        alert('The Name field cannot be empty.');
-        return;
-    }
-    if (!playerEmailField.value) {
-        alert('The Email field cannot be empty.');
+    if (!playerUsernameField.value) {
+        alert('The Usermame field cannot be empty.');
         return;
     }
 
@@ -74,8 +69,7 @@ const handleSaveClicked = (event) => {
 
     const user = {
         id: playerIdElement.innerHTML,
-        name: playerNameField.value,
-        email: playerEmailField.value,
+        username: playerUsernameField.value,
         newPassword: playerNewPassword.value,
         confirmPassword: playerConfirmPassword.value,
     };
@@ -172,7 +166,7 @@ const handleDeleteClicked = (event) => {
 
 const renderProfile = (User) => {
     let nameElement = document.getElementById('playerName');
-    nameElement.innerText = User.name;
+    nameElement.innerText = User.username;
     let friendCodeElement = document.getElementById('friendCode');
     friendCodeElement.innerText = User.id;
     let playerWinsElement = document.getElementById('player-victories');
@@ -199,10 +193,8 @@ const renderProfile = (User) => {
     // Set field values
     let playerIdElement = document.getElementById('player-id');
     playerIdElement.innerHTML = User.id;
-    let playerNameField = document.getElementById('name-field');
-    playerNameField.value = User.name;
-    let playerEmailField = document.getElementById('email-field');
-    playerEmailField.value = User.email;
+    let playerNameField = document.getElementById('username-field');
+    playerNameField.value = User.username;
     let highlightColor = document.getElementById('highlight-color');
     highlightColor.value = User.highlightColor;
     let backgroundColor = document.getElementById('background-color');
@@ -415,9 +407,8 @@ const emptyUser = {
         }
     },
     "id": "93a1c909-d471-4c34-80dc-c4b2f89d3996",
-    "email": "Spinto@gmail.com",
     "backgroundColor": "#050505",
-    "name": "User Not Found"
+    "username": "User Not Found"
 }
 
 window.onload = () => {
@@ -454,7 +445,7 @@ window.onload = () => {
                 renderProfile(User);
                 setUser(User);
                 let profileTitle = document.getElementById('profile-title');
-                profileTitle.innerText = `${User.name}'s Profile`;
+                profileTitle.innerText = `${User.username}'s Profile`;
                 if (User.victories > 1) {
                     // Initialize the interactable JavaScript bits
                     let pieces = document.getElementsByClassName('piece');
@@ -498,7 +489,7 @@ window.onload = () => {
                 User = data;
                 renderProfile(User);
                 let profileTitle = document.getElementById('profile-title');
-                profileTitle.innerText = `${User.name}'s Profile`;
+                profileTitle.innerText = `${User.username}'s Profile`;
                 if (User.victories < 1) {
                     let customizationStation = document.getElementById('customization-slate');
                     customizationStation.classList.add('hidden');

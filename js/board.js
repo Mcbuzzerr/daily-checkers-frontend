@@ -403,21 +403,21 @@ const renderPlayers = () => {
     let playerA = document.getElementById("player-a-slate");
     let playerB = document.getElementById("player-b-slate");
     playerA.style.backgroundColor = Players.A.account.backgroundColor;
-    playerA.querySelector(".playerName").innerHTML = Players.A.account.name;
+    playerA.querySelector(".playerName").innerHTML = Players.A.account.username;
     playerA.querySelector(".friendCode").innerHTML = Players.A.account.id;
     playerA.querySelector(".player-victories").innerHTML = Players.A.account.victories;
     playerB.style.backgroundColor = Players.B.account.backgroundColor;
     playerB.querySelector(".friendCode").innerHTML = Players.B.account.id;
-    playerB.querySelector(".playerName").innerHTML = Players.B.account.name;
+    playerB.querySelector(".playerName").innerHTML = Players.B.account.username;
     playerB.querySelector(".player-victories").innerHTML = Players.B.account.victories;
     playerA.addEventListener("click", () => {
-        let areTheySure = confirm(`Leave this game and view ${Players.A.account.name}'s profile?`);
+        let areTheySure = confirm(`Leave this game and view ${Players.A.account.username}'s profile?`);
         if (areTheySure) {
             window.location.href = `profile.html?user=${Players.A.account.id}`;
         }
     });
     playerB.addEventListener("click", () => {
-        let areTheySure = confirm(`Leave this game and view ${Players.B.account.name}'s profile?`);
+        let areTheySure = confirm(`Leave this game and view ${Players.B.account.username}'s profile?`);
         if (areTheySure) {
             window.location.href = `profile.html?user=${Players.B.account.id}`;
         }
@@ -539,7 +539,7 @@ window.onload = async () => {
     if (Game.gameOver) {
         let winner = getWinner(Game);
         let winnerHighlightColor = Players[winner].account.highlightColor;
-        let winnerName = Players[winner].account.name;
+        let winnerName = Players[winner].account.username;
         let buttonBar = document.getElementById("button-bar");
         buttonBar.innerHTML = "<h3 style='color: " + winnerHighlightColor + ";'>" + winnerName + " has won the game!</h3>";
 

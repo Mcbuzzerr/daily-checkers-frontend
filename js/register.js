@@ -6,12 +6,12 @@ const handleRegisterClicked = () => {
         button.classList.add('disabled');
         button.innerText = 'Registering...';
     }
-    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const name = document.getElementById('name').value;
     const password = document.getElementById('password').value;
 
     const data = {
-        email: email,
+        username: username,
         name: name,
         password: password
     };

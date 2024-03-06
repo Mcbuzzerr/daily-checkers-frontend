@@ -6,9 +6,9 @@ const handleLoginClicked = () => {
         button.classList.add('disabled');
         button.innerText = 'Logging in...';
     }
-    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const data = { email: email, password: password };
+    const data = { username: username, password: password };
     const url = "https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/1/user/login";
 
     fetch(url, {

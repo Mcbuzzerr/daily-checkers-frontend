@@ -73,12 +73,12 @@ const getGameList = async () => {
         let header3Text = null;
         let winner = getWinner(game);
         if (game.gameOver) {
-            header3Text = `Game Over! <span class="player-name bold">${game.players[winner].name}</span> has won!`;
+            header3Text = `Game Over! <span class="player-name bold">${game.players[winner].username}</span> has won!`;
         } else {
             if (game.players.B.id === loggedInUser.id) {
-                header3Text = `You have invited <span class="player-name bold">${game.players.A["name"]}</span> to play a game of checkers.`;
+                header3Text = `You have invited <span class="player-name bold">${game.players.A["username"]}</span> to play a game of checkers.`;
             } else {
-                header3Text = `<span class="player-name bold">${game.players.B["name"]}</span> has invited you to play a game of checkers.`;
+                header3Text = `<span class="player-name bold">${game.players.B["username"]}</span> has invited you to play a game of checkers.`;
             }
         }
 
