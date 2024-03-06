@@ -97,7 +97,7 @@ const getGameList = async () => {
                 <p class="button submit" onclick="playGameClicked('${game.id}')">${getTimeUntilNextTurn(game.players[whoseLoggedIn]) == "0:0:0" ? "Play Game" : "View Game"}</p>
                 <h3 class="no-margin" style="text-align: left; flex-grow:1; padding-left: 10px;" id="${game.id + "-timer"}">Next Turn: <br /><span class="bold">${turnText}</span></h3>
                 <h3 class="no-margin" id="vs">
-                    <span style="color: black; ${turn == "Black" ? "font-weight: bold; text-decoration: underline;" : ""}">${totalBlack}</span> vs. <span style="color: white;">${totalWhite}</span>
+                    <span style="color: black; ${turn == "Black" ? "font-weight: bold; text-decoration: underline;" : ""}">${totalBlack}</span> vs. <span style="color: white; ${turn == "White" ? "font-weight: bold; text-decoration: underline;" : ""}">${totalWhite}</span>
                 </h1>
                 <p class="button cancel" style="visibility: ${game.gameOver ? "hidden" : "visible"};" onclick="handleConcedeClicked('${game.id}')">Concede</p>
                 </div>
