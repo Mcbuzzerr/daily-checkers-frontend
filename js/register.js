@@ -7,12 +7,10 @@ const handleRegisterClicked = () => {
         button.innerText = 'Registering...';
     }
     const username = document.getElementById('username').value;
-    const name = document.getElementById('name').value;
     const password = document.getElementById('password').value;
 
     const data = {
         username: username,
-        name: name,
         password: password
     };
 
