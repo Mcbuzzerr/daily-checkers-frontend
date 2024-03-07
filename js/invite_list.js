@@ -18,11 +18,11 @@ const getInviteList = async () => {
     }).then((data) => {
         document.getElementById('loading-slate').style.display = "none";
         console.log(data)
-        if (!data.hasOwnProperty("invites")) {
+        if (data.hasOwnProperty("message")) {
             return [];
         }
 
-        return data["invites"];
+        return data;
     });
 
 
