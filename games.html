@@ -30,14 +30,26 @@
     <main>
         <h1 onclick="window.location.href = 'index.html'">Daily Checkers</h1>
         <div class="header-bar">
+            <div id="game-history-view-button" class="icon-button" onclick="handleOpenGameHistoryClicked(event)"></div>
             <h2>Your Games</h2>
-            <div id="new-game-button" class="" onclick="handleNewGameClicked(event)">+</div>
+            <div id="new-game-button" class="icon-button" onclick="handleNewGameClicked(event)">+</div>
         </div>
         <div class="slate" id="loading-slate">
             Getting games...
         </div>
         <div id="game-container">
-
+            <div id="no-games-message" class="slate hidden">
+                <h3>
+                    You have no games at this time.
+                </h3>
+            </div>
+        </div>
+        <div id="game-history-container" class="hidden">
+            <div id="no-history-message" class="slate">
+                <h3>
+                    You have no game history at this time.
+                </h3>
+            </div>
         </div>
     </main>
 </body>

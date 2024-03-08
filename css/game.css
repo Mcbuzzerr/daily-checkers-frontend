@@ -45,6 +45,10 @@ main {
     flex-direction: column;
 }
 
+h2 {
+    margin: 0;
+}
+
 .board {
     padding: 15px;
     background-color: gray;
@@ -82,9 +86,9 @@ main {
     overflow: hidden;
 }
 
-.cell.highlighted {
-    outline: var(--player-a-outline-color) solid 2px;
-    outline-offset: -2px;
+.cell.highlighted::before {
+    outline: var(--player-a-outline-color) 3px outset;
+    outline-offset: -3px;
 }
 
 .cell.white {
@@ -260,4 +264,14 @@ main {
     z-index: 1;
     padding: 2rem;
     font-size: 2rem;
+}
+
+#team-label-black {
+    color: black;
+    font-style: italic;
+}
+
+#team-label-white {
+    color: white;
+    font-style: italic;
 }

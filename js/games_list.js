@@ -1,9 +1,10 @@
 let loggedInUser = null;
+let gameList = [];
+let gameHistory = [];
 
 const getGameList = async () => {
-    let gameList = [];
     let url = "https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/1/game/list"
-    gameList = await fetch(url, {
+    let response = await fetch(url, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -16,22 +17,17 @@ const getGameList = async () => {
         if (data.hasOwnProperty("message")) {
             if (data.message == "No games found") {
                 console.log("No games found")
-                document.getElementById('game-container').innerHTML = `
-                <div id="no-invites-message" class="slate">
-                    <h3>
-                        You have no games at this time.
-                    </h3>
-                </div>`;
+                document.getElementById('no-games-message').classList.remove('hidden');
             }
         }
         return data;
     });
 
-    for (let i = 0; i < gameList.length; i++) {
-        if (gameList[i].gameOver) {
-            console.log("Game Over")
-            gameList.push(gameList[i]);
-            gameList.splice(i, 1);
+    for (let i = 0; i < response.length; i++) {
+        if (response[i].gameOver) {
+            gameHistory.push(response[i]);
+        } else {
+            gameList.push(response[i]);
         }
     }
 
@@ -106,17 +102,14 @@ const getGameList = async () => {
         document.getElementById('game-container').appendChild(inviteElement);
     }
 
-    if (gameList.length === 0) {
-        let inviteElement = document.createElement('div');
-        // inviteElement.classList.add('slate');
-        // inviteElement.classList.add('invite');
-        inviteElement.innerHTML = `
-        <div id="no-invites-message" class="slate hidden">
-            <h3>
-                You have no games at this time.
-            </h3>
-        </div>`;
-        document.getElementById('game-container').appendChild(inviteElement);
+    if (gameList.length !== 0) {
+        console.log(document.getElementById('no-games-message'));
+        document.getElementById('no-games-message').classList.add('hidden');
+    }
+
+    if (gameHistory.length !== 0) {
+        renderHistory();
+        document.getElementById('no-history-message').classList.add('hidden');
     }
 };
 
@@ -158,6 +151,9 @@ const handleConcedeClicked = (gameId) => {
 }
 
 const handleNewGameClicked = (event) => {
+    if (event.target.classList.contains('disabled')) {
+        return;
+    }
     event.target.classList.add('disabled');
     fetch("https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/1/invite/random",
         {
@@ -181,6 +177,66 @@ const handleNewGameClicked = (event) => {
             event.target.classList.remove('disabled');
         });
 };
+
+const handleOpenGameHistoryClicked = (event) => {
+    if (event.target.classList.contains('active')) {
+        console.log("Close Game History Clicked")
+        document.getElementById('game-container').classList.remove('hidden');
+        document.getElementById('game-history-container').classList.add('hidden');
+        event.target.classList.remove('active');
+        return;
+    }
+    console.log("Open Game History Clicked");
+    event.target.classList.add('active');
+    document.getElementById('game-container').classList.add('hidden');
+    document.getElementById('game-history-container').classList.remove('hidden');
+};
+
+const renderHistory = () => {
+    for (let i = 0; i < gameHistory.length; i++) {
+        let game = gameHistory[i];
+        let inviteElement = document.createElement('div');
+        inviteElement.classList.add('slate');
+        inviteElement.classList.add('game');
+        let turn = game.turnCount % 2 === 1 ? "White" : "Black";
+        let totalWhite = 0;
+        let totalBlack = 0;
+
+        if (game.board !== null) {
+            for (let iter = 0; iter < game.board.length; iter++) {
+                let row = game.board[iter];
+                for (let j = 0; j < row.length; j++) {
+                    let cell = row[j];
+                    if (cell !== null) {
+                        if (Object.keys(cell)[0].split("-")[1] == "A") {
+                            totalBlack++;
+                        } else {
+                            totalWhite++;
+                        }
+                    }
+                }
+            }
+        }
+
+        let winner = getWinner(game);
+        let header3Text = `Game Over! <span class="player-name bold">${game.players[winner]?.username}</span> has won!`;
+
+        inviteElement.innerHTML = `
+            <h3>
+                ${header3Text}
+            </h3>
+            <div class="button-container">
+                <p class="button submit" onclick="playGameClicked('${game.id}')">View Game</p>
+                <h3 class="no-margin" style="text-align: left; flex-grow:1; padding-left: 10px;" id="${game.id + "-timer"}">Game Over</h3>
+                <h3 class="no-margin" id="vs">
+                    <span style="color: black; ${turn == "Black" ? "font-weight: bold; text-decoration: underline;" : ""}">${totalBlack}</span> vs. <span style="color: white; ${turn == "White" ? "font-weight: bold; text-decoration: underline;" : ""}">${totalWhite}</span>
+                </h1>
+                <p class="button cancel" style="visibility: hidden;" onclick="handleConcedeClicked('${game.id}')">Concede</p>
+                </div>
+            `; // turncount % 2 = 1 or 0, 0 is black or white idk yet
+        document.getElementById('game-history-container').appendChild(inviteElement);
+    }
+}
 
 const getWinner = (game) => {
     // Check who has more pieces left

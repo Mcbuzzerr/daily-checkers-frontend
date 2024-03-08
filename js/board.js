@@ -521,8 +521,12 @@ window.onload = async () => {
     Players.B = Game.players.B
     if (Game.turnCount % 2 == 0) {
         whoseTurn = "A"
+        document.getElementById("team-label-black").style.fontWeight = "bold";
+        document.getElementById("team-label-black").style.textDecoration = "underline";
     } else {
         whoseTurn = "B"
+        document.getElementById("team-label-white").style.fontWeight = "bold";
+        document.getElementById("team-label-white").style.textDecoration = "underline";
     }
 
     if (Game.players.A.id !== loggedInPlayer.id && Game.players.B.id !== loggedInPlayer.id) {
