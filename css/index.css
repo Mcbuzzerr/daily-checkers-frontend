@@ -33,3 +33,17 @@ h3 {
     height: 321px;
     box-shadow: 7px 7px 0px black;
 }
+
+#button-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+#button-container img {
+    image-rendering: pixelated;
+}
