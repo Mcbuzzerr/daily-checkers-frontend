@@ -468,7 +468,6 @@ window.onload = () => {
             })
             .catch((error) => {
                 console.log('Error:', error);
-                alert('An error occurred. Please try again later.');
             });
     } else {
         let editButton = document.getElementById('edit-button');

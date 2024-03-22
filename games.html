@@ -28,10 +28,11 @@
     <p class="button games disabled" onclick="window.location.href='games.html'">Games</p>
     <p id="log-out-button" class="button logout" onclick="handleLogoutClicked()">Log Out</p>
     <main>
-        <h1 onclick="window.location.href = 'index.html'">Daily Checkers</h1>
+        <h1 onclick="window.location.href = 'index.html'">The Daily <img class="clock" src="./img/clock.gif"
+                alt="A ticking clock" width="80px"> Checkers</h1>
         <div class="header-bar">
             <div id="game-history-view-button" class="icon-button" onclick="handleOpenGameHistoryClicked(event)"></div>
-            <h2>Your Games</h2>
+            <h2 id="menu-title">Your Ongoing Games</h2>
             <div id="new-game-button" class="icon-button" onclick="handleNewGameClicked(event)">+</div>
         </div>
         <div class="slate" id="loading-slate">
@@ -40,7 +41,8 @@
         <div id="game-container">
             <div id="no-games-message" class="slate hidden">
                 <h3>
-                    You have no games at this time.
+                    You have no ongoing games at this time. Create a match request with a random user via the
+                    "+" button above, or head to the invites page to challenge a friend directly!
                 </h3>
             </div>
         </div>
@@ -52,6 +54,10 @@
             </div>
         </div>
     </main>
+    <a id="discord-wizard" href="https://discord.gg/xRUpmtJWcC" target="_blank">
+        <div class="word-bubble"> If you find a bug tell me about it in the discord!</div>
+        <img src="./img/out-of-order-wizard.gif" alt="A wizard holding an out of order sign" id="wizard">
+    </a>
 </body>
 
 </html>

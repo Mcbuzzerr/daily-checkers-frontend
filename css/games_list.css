@@ -116,3 +116,45 @@ h2 {
 main {
     overflow-y: auto;
 }
+
+#no-games-message {
+    max-width: 600px;
+    text-align: justify;
+}
+
+#discord-wizard {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+#wizard {
+    height: 200px;
+    z-index: 1;
+}
+
+.word-bubble {
+    background-color: white;
+    padding: 10px;
+    text-wrap: wrap;
+    width: 120px;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px black;
+    position: absolute;
+    top: -45px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.word-bubble::before {
+    content: "";
+    position: absolute;
+    top: calc(100% - 10px);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    box-shadow: 5px 2px 0px black;
+}

@@ -1,32 +1,16 @@
-window.onload = () => {
-    if (!isUserLoggedIn()) {
-        let logoutButton = document.getElementById('log-out-button');
-        logoutButton.classList.add('hidden');
-        let gamesButton = document.getElementById('games-button');
-        gamesButton.classList.add('hidden');
-        let profileButton = document.getElementById('profile-button');
-        profileButton.classList.add('hidden');
-        let inviteButton = document.getElementById('invite-button');
-        inviteButton.classList.add('hidden');
-    } else {
-        let loggedInBar = document.getElementById('logged-in-bar');
-        let loggedOutBar = document.getElementById('logged-out-bar');
-        loggedInBar.classList.remove('hidden');
-        loggedOutBar.classList.add('hidden');
+<!DOCTYPE html>
+<html lang="en">
 
-        let iframe = document.getElementById('gify-pet-iframe');
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML5 Boilerplate</title>
+</head>
 
-        if (getUser()["victories"] > 0) {
-            iframe.src = "https://gifypet.neocities.org/pet/pet.html?name=CoolSpot&dob=1709667193&gender=m&element=Water&pet=https%3A%2F%2Fnekkostarr.nekoweb.org%2Fdaily-checkers-frontend%2Fimg%2Fgreenchecker.gif&map=https%3A%2F%2Fnekkostarr.nekoweb.org%2Fdaily-checkers-frontend%2Fimg%2FcheckerBoardSprite.png&background=https%3A%2F%2Fnekkostarr.nekoweb.org%2Fdaily-checkers-frontend%2Fimg%2Fgray020.png&tablecolor=black&textcolor=black"
-        }
-    }
-};
+<body>
+    <h1>Welcome to My HTML5 Boilerplate</h1>
 
-const copyCodeToClipboard = (event) => {
-    console.log(event.target.id);
-    const buttonCode = `<a href="https://daily-checkers.nekoweb.org" target="_blank"><img id="daily-checkers-button" src="https://daily-checkers.nekoweb.org/img/DailyCheckersButton.gif"
-    alt="DailyCheckers88by31gif" width="176px" height="62px"></a>`
-    const logoCode = `<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Blaka+Hollow&display=swap" rel="stylesheet">
     <style>
@@ -174,19 +158,8 @@ const copyCodeToClipboard = (event) => {
         <p class="checkers">Checkers</p>
         <div class="piece-2"></div>
     </a>
-    `
 
-    switch (event.target.id) {
-        case "daily-checkers-button":
-            navigator.clipboard.writeText(buttonCode);
-            alert("Code copied to clipboard");
-            break;
-        case "daily-checkers-logo":
-            navigator.clipboard.writeText(logoCode);
-            alert("Code copied to clipboard, but be wary it's a bit complicated. You'll probably want to move the styles to a CSS file.")
-            break;
 
-        default:
-            break;
-    }
-}
+</body>
+
+</html>

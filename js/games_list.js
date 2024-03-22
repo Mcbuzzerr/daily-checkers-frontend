@@ -17,7 +17,6 @@ const getGameList = async () => {
         if (data.hasOwnProperty("message")) {
             if (data.message == "No games found") {
                 console.log("No games found")
-                document.getElementById('no-games-message').classList.remove('hidden');
             }
         }
         return data;
@@ -29,6 +28,10 @@ const getGameList = async () => {
         } else {
             gameList.push(response[i]);
         }
+    }
+
+    if (gameList.length === 0) {
+        document.getElementById('no-games-message').classList.remove('hidden');
     }
 
     for (let i = 0; i < gameList.length; i++) {

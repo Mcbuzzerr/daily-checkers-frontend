@@ -89,7 +89,6 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    image-rendering: pixelated;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -190,6 +189,9 @@ h1 {
     /*"Chokokutai", system-ui;*/
     text-shadow: 3px 3px 0px white;
     text-wrap: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -209,6 +211,9 @@ h3 {
     margin-bottom: 10px;
 }
 
+img {
+    image-rendering: pixelated;
+}
 
 .logout {
     position: absolute;
@@ -275,9 +280,9 @@ h3 {
     padding: 15px;
     background-color: gray;
     border: 1px solid black;
+    box-shadow: 7px 7px 0px black;
     display: flex;
     flex-direction: column;
-    box-shadow: 7px 7px 0px black;
     /* align-items: center; */
     justify-content: space-evenly;
     filter: contrast(1.3);

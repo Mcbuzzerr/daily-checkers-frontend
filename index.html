@@ -8,6 +8,7 @@
     <meta http-equiv="expires" content="-1">
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT">
     <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="./css/retro98Scrollbar.css">
     <script src="./js/global_tools.js" defer></script>
     <link rel="stylesheet" href="css/css_reset.css">
 
@@ -17,7 +18,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Checkers</title>
+    <title>The Daily Checkers</title>
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/index.js" defer></script>
 </head>
@@ -28,13 +29,22 @@
     <p id="games-button" class="button games" onclick="window.location.href='games.html'">Games</p>
     <p id="log-out-button" class="button logout" onclick="handleLogoutClicked()">Log Out</p>
     <main>
-        <h1 onclick="window.location.href = 'index.html'">Daily Checkers</h1>
+        <div class="logo-outer">
+            <img src="./img/checkerBoardSpriteTile45Deg.png" alt="" class="slanted-board">
+            <div class="piece-1"></div>
+            <p class="daily">The Daily</p>
+            <img class="clock" src="./img/clock.gif" alt="A ticking clock">
+            <p class="checkers">Checkers</p>
+            <div class="piece-2"></div>
+        </div>
         <div class="slate welcome">
-            <h3>Welcome to Daily Checkers!</h3>
+            <h3>Welcome to The The Daily Checkers!</h3>
             <p>
                 This is a place where you can play checkers, but with the simple catch that you can only take a turn
-                once per day. Keep coming back every day to make your moves and see how the game unfolds! Oh also,
-                there's a special reward if you win a game :)
+                once per day. Keep <span class="italic" title="Get it?????">Checking</span> in <span class="italic"
+                    title="Aren't I so funny">Daily</span> to make
+                your moves and see how the game
+                unfolds! Oh also, there's a special reward if you win a game :)
             </p>
             <div id="logged-out-bar" class="bar">
                 <p class="button submit" onclick="window.location.href = 'register.html'">Register</p>
@@ -45,9 +55,19 @@
                 <p class="button" onclick="window.location.href = 'invites.html'">Check Invites</p>
             </div>
         </div>
-        <div id="button-container" class="slate">
-            <h3>Link back to Daily Checkers!</h3>
-            <img src="./img/DailyCheckersButton.gif" alt="DailyCheckers88by31gif" width="176px" height="62px">
+        <div id="button-container" class="retro-scrollbar">
+            <h3>Link back to The Daily Checkers!</h3>
+            <p> Click to copy code to clipboard</p>
+            <img id="daily-checkers-button" onclick="copyCodeToClipboard(event)" src="./img/DailyCheckersButton.gif"
+                alt="DailyCheckers88by31gif" width="176px" height="62px">
+            <div id="daily-checkers-logo" onclick="copyCodeToClipboard(event)" class="logo-outer vertical">
+                <img src="./img/checkerBoardSpriteTileNeg45Deg.png" alt="" class="slanted-board">
+                <div class="piece-1"></div>
+                <p class="daily">The Daily</p>
+                <img class="clock" src="./img/clock.gif" alt="A ticking clock">
+                <p class="checkers">Checkers</p>
+                <div class="piece-2"></div>
+            </div>
         </div>
         <div id="gify-pet-window">
             <h3 class="slate">Take care of the site mascot <br /> while ur here :3</h3>
@@ -57,10 +77,28 @@
         </div>
         <div class="visitor-counter slate">
             There have been <a href="https://www.cutercounter.com/" target="_blank"><img
-                    src="https://www.cutercounter.com/hits.php?id=hxpaqcn&nd=4&style=13" border="0"
-                    alt="visitor counter"></a> visitors to this site!
+                    src="https://www.cutercounter.com/hits.php?id=hxpaqcn&nd=4&style=13" alt="visitor counter"></a>
+            visitors to this site!
         </div>
     </main>
+    <div class="absolute-goof hidden">
+        <div class="logo-outer">
+            <img src="./img/checkerBoardSpriteTile45Deg.png" alt="" class="slanted-board">
+            <div class="piece-1"></div>
+            <p class="daily">The Daily</p>
+            <img class="clock" src="./img/clock.gif" alt="A ticking clock">
+            <p class="checkers">Checkers</p>
+            <div class="piece-2"></div>
+        </div>
+        <div class="logo-outer vertical">
+            <img src="./img/checkerBoardSpriteTileNeg45Deg.png" alt="" class="slanted-board">
+            <div class="piece-1"></div>
+            <p class="daily">The Daily</p>
+            <img class="clock" src="./img/clock.gif" alt="A ticking clock">
+            <p class="checkers">Checkers</p>
+            <div class="piece-2"></div>
+        </div>
+    </div>
 </body>
 
 </html>
