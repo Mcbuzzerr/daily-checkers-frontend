@@ -47,3 +47,13 @@ h3 {
 #button-container img {
     image-rendering: pixelated;
 }
+
+.visitor-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-wrap: nowrap;
+    margin-top: 1rem;
+}

@@ -222,6 +222,9 @@ const renderHistory = () => {
         }
 
         let winner = getWinner(game);
+        let winner_name = "";
+        console.log(winner)
+        console.log(game.players);
         let header3Text = `Game Over! <span class="player-name bold">${game.players[winner]?.username}</span> has won!`;
 
         inviteElement.innerHTML = `
@@ -243,25 +246,15 @@ const renderHistory = () => {
 
 const getWinner = (game) => {
     // Check who has more pieces left
-    let totalWhite = 0;
-    let totalBlack = 0;
-    for (let iter = 0; iter < game.board.length; iter++) {
-        let row = game.board[iter];
-        for (let j = 0; j < row.length; j++) {
-            let cell = row[j];
-            if (cell !== null) {
-                if (Object.keys(cell)[0].split("-")[1] == "A") {
-                    totalBlack++;
-                } else {
-                    totalWhite++;
-                }
-            }
+    if (game.winner !== null) {
+        let winner_id = game.winner;
+        if (game.players.A.id === winner_id) {
+            return "A";
+        } else {
+            return "B";
         }
-    }
-    if (totalBlack > totalWhite) {
-        return "A";
-    } else if (totalWhite > totalBlack) {
-        return "B";
+    } else {
+        return null;
     }
 }
 

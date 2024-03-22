@@ -94,6 +94,7 @@ h2 {
     background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
+    image-rendering: pixelated;
 }
 
 .icon-button.disabled {
