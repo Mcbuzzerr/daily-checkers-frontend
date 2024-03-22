@@ -48,6 +48,7 @@ const copyCodeToClipboard = (event) => {
 
         .logo-outer>* {
             pointer-events: none;
+            image-rendering: pixelated;
         }
 
         .logo-outer::before {
@@ -85,6 +86,7 @@ const copyCodeToClipboard = (event) => {
             text-shadow: 3px 3px 0px white;
             width: 200px;
             margin: 0;
+            font-weight: normal;
         }
 
         .logo-outer>.daily {

@@ -121,6 +121,11 @@ const declineInviteClicked = async (inviteId) => {
 };
 
 const handleNewInviteClicked = async () => {
+    let newInviteButton = document.getElementById('new-invite-button');
+    if (newInviteButton.classList.contains('disabled')) return;
+    else newInviteButton.classList.add('disabled');
+
+
     let friendCode = document.getElementById('friend-code').value;
     if (friendCode) {
         let url = "https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/1/invite/" + friendCode;
@@ -146,6 +151,7 @@ const handleNewInviteClicked = async () => {
             if (!data) return;
             document.getElementById('friend-code').value = "";
             alert('Invite sent');
+            newInviteButton.classList.remove('disabled');
         }).catch((error) => {
             console.error('Error:', error);
             alert('Error sending invite');
@@ -153,6 +159,14 @@ const handleNewInviteClicked = async () => {
     } else {
         alert('Please enter a friend code');
     }
+};
+
+const toggleHideChat = () => {
+    let chat = document.getElementById('cbox');
+    let chatButton = document.getElementById('chat-button');
+
+    chat.classList.toggle('hidden');
+    chatButton.classList.toggle('hidden');
 };
 
 
