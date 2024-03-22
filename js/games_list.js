@@ -190,6 +190,9 @@ const handleOpenGameHistoryClicked = (event) => {
     event.target.classList.add('active');
     document.getElementById('game-container').classList.add('hidden');
     document.getElementById('game-history-container').classList.remove('hidden');
+    console.log(gameHistory);
+    console.log(gameList);
+    console.log("York")
 };
 
 const renderHistory = () => {

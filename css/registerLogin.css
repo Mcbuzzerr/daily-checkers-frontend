@@ -85,3 +85,22 @@ main {
     box-shadow: none;
     transform: translate(3px, 3px);
 }
+
+strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.note {
+    width: 500px;
+    background-color: rgb(242, 242, 90);
+}
+
+.bigger {
+    font-size: 25px;
+}
+
+.italic {
+    font-style: italic;
+    font-size: 17px;
+}
