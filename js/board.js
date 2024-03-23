@@ -349,7 +349,8 @@ const handleSubmitMove = async (event) => {
             }
         },
         "gameOver": false,
-        "turnCount": Game.turnCount
+        "turnCount": Game.turnCount,
+        "winner": null
     }
     fetch(url, {
         method: 'POST',
@@ -553,6 +554,9 @@ window.onload = async () => {
         clearSelection();
         clearHighlights();
     })
+
+    console.log("Hey! What's the big idea? Don't go poking around in here! This is where cheaters like to hang out don't ya know?")
+    console.log("The very first move ever made on Daily Checkers was made on 3/22/24 by 'amogus' and it was illegal LMAO. I feel like I gotta memorialize that so here ya go!")
 }
 
 setInterval(renderTimeSinceLastTurn, 1000);

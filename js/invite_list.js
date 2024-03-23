@@ -116,7 +116,7 @@ const declineInviteClicked = async (inviteId) => {
         inviteSlate.remove();
     }).catch((error) => {
         console.error('Error:', error);
-        alert('Error accepting invite');
+        alert('Error declining invite');
     });
 };
 
