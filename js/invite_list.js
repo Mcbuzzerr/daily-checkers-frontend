@@ -6,7 +6,7 @@
 
 const getInviteList = async () => {
     let inviteList = [];
-    let url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/invite/list`
+    let url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/invite/list`
     inviteList = await fetch(url, {
         method: 'GET',
         headers: {
@@ -73,7 +73,7 @@ const acceptInviteClicked = async (inviteId) => {
     buttons[0].innerHTML = "Accepting...";
     buttons[0].style.transform = "translate(4px, 4px)";
     buttons[0].style.boxShadow = "none";
-    fetch(`https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/${STAGE}/invite/accept/${inviteId}`, {
+    fetch(`https://hjpe29d12e.execute-api.us-west-1.amazonaws.com/${STAGE}/invite/accept/${inviteId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const declineInviteClicked = async (inviteId) => {
     buttons[1].innerHTML = "Declining...";
     buttons[1].style.transform = "translate(4px, 4px)";
     buttons[1].style.boxShadow = "none";
-    fetch(`https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/invite/decline/${inviteId}`, {
+    fetch(`https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/invite/decline/${inviteId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ const handleNewInviteClicked = async () => {
 
     let friendCode = document.getElementById('friend-code').value;
     if (friendCode) {
-        let url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/invite/${friendCode}`;
+        let url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/invite/${friendCode}`;
         fetch(url, {
             method: 'POST',
             headers: {

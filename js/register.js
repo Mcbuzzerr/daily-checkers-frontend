@@ -15,7 +15,7 @@ const handleRegisterClicked = () => {
     };
 
     //Not real endpoint
-    const url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/user/register`;
+    const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/register`;
     //Not real endpoint
 
     fetch(url, {

@@ -74,7 +74,7 @@ const handleSaveClicked = (event) => {
         confirmPassword: playerConfirmPassword.value,
     };
 
-    const url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/user/update/${user.id}`;
+    const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/update/${user.id}`;
     const token = getCookie('authToken');
     fetch(url, {
         method: 'PUT',
@@ -137,7 +137,7 @@ const handleDeleteClicked = (event) => {
     }
 
     const user = getUser();
-    const url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/user/delete/${user.id}`;
+    const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/delete/${user.id}`;
     const token = getCookie('authToken');
     fetch(url, {
         method: 'DELETE',
@@ -226,7 +226,7 @@ const handleSaveCustomizeClicked = (event) => {
         piecesBColor: piecesBColor.value,
         pieces: pieces,
     }
-    const url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/user/update-customization/${id}`;
+    const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/update-customization/${id}`;
     const token = getCookie('authToken');
     fetch(url, {
         method: 'PUT',
@@ -423,7 +423,7 @@ window.onload = () => {
         profileButton.classList.add('disabled');
         let customizationSlate = document.getElementById('customization-slate');
         customizationSlate.classList.remove('hidden');
-        const url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/user/view/${id}`;
+        const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/view/${id}`;
         fetch(url, {
             headers: {
                 'content-type': 'application/json',
@@ -472,7 +472,7 @@ window.onload = () => {
     } else {
         let editButton = document.getElementById('edit-button');
         editButton.classList.add('hidden');
-        const url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/user/view/${user_id}`;
+        const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/view/${user_id}`;
         fetch(url)
             .then(
                 response => {
