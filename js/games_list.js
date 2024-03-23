@@ -3,7 +3,7 @@ let gameList = [];
 let gameHistory = [];
 
 const getGameList = async () => {
-    let url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/game/list`
+    let url = `https://${PREFIX}.execute-api.us-west-1.amazonaws.com/${STAGE}/game/list`
     let response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -139,7 +139,7 @@ const playGameClicked = (gameId) => {
 const handleConcedeClicked = (gameId) => {
     let areTheySure = confirm("Are you sure you want to concede the game?");
     if (areTheySure) {
-        fetch(`https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/game/concede/${gameId}`, {
+        fetch(`https://${PREFIX}.execute-api.us-west-1.amazonaws.com/${STAGE}/game/concede/${gameId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const handleNewGameClicked = (event) => {
         return;
     }
     event.target.classList.add('disabled');
-    fetch(`https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/invite/random`,
+    fetch(`https://${PREFIX}.execute-api.us-west-1.amazonaws.com/${STAGE}/invite/random`,
         {
             method: 'POST',
             headers: {

@@ -68,3 +68,4 @@ const isUserLoggedIn = () => {
 }
 
 const STAGE = "dev"
+const PREFIX = "h5ill3vp32"

@@ -9,7 +9,7 @@ const handleLoginClicked = () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const data = { username: username, password: password };
-    const url = `https://jovfbj0dwc.execute-api.us-west-1.amazonaws.com/${STAGE}/user/login`;
+    const url = `https://${PREFIX}.execute-api.us-west-1.amazonaws.com/${STAGE}/user/login`;
 
     fetch(url, {
         method: 'POST',
