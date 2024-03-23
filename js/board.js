@@ -333,8 +333,7 @@ const handleSubmitMove = async (event) => {
     event.target.innerHTML = "Submitting...";
     document.getElementById("undo-button").classList.add("disabled");
 
-
-    let url = `https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/1/game/take-turn`;
+    let url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/game/take-turn`;
     let data = {
         "id": Game.id,
         "board": gameBoard,
@@ -377,7 +376,7 @@ const handleSubmitMove = async (event) => {
 }
 
 const getGame = async (gameId) => {
-    let url = `https://hjpe29d12e.execute-api.us-east-1.amazonaws.com/1/game/view/${gameId}`;
+    let url = `https://jovfbj0dwc.execute-api.us-east-1.amazonaws.com/${STAGE}/game/view/${gameId}`;
     let gameData = await fetch(url, {
         method: 'GET',
         headers: {
