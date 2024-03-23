@@ -66,3 +66,5 @@ const handleLogoutClicked = () => {
 const isUserLoggedIn = () => {
     return getUser() != null;
 }
+
+const STAGE = "dev"
