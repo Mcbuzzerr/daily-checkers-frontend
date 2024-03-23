@@ -301,6 +301,10 @@ img {
     z-index: -1;
 }
 
+.note {
+    background-color: rgb(242, 242, 90);
+}
+
 .hidden {
     display: none !important;
 }
