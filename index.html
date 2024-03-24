@@ -30,6 +30,9 @@
     <p id="profile-button" class="button profile" onclick="window.location.href='profile.html'">Profile</p>
     <p id="invite-button" class="button invites" onclick="window.location.href='invites.html'">Invites</p>
     <p id="games-button" class="button games" onclick="window.location.href='games.html'">Games</p>
+    <p id="webring-button" class="button webring">Webring</p>
+    <p id="register-button" class="button register submit" onclick="window.location.href = 'register.html'">Register</p>
+    <p id="login-button" class="button login" onclick="window.location.href = 'login.html'">Log In</p>
     <p id="log-out-button" class="button logout" onclick="handleLogoutClicked()">Log Out</p>
     <main>
         <div class="logo-outer">
@@ -41,7 +44,7 @@
             <div class="piece-2"></div>
         </div>
         <div class="slate welcome">
-            <h3>Welcome to The The Daily Checkers!</h3>
+            <h3>Welcome to The Daily Checkers!</h3>
             <p>
                 This is a place where you can play checkers, but with the simple catch that you can only take a turn
                 once per day. Keep <span class="italic" title="Get it?????">Checking</span> in <span class="italic"
@@ -80,7 +83,8 @@
         </div>
         <div class="slate note">
             <p>
-                I accidentally deleted the database, so you'll have to re-register. Sorry about that.
+                I accidentally deleted the database, so you'll have to re-register. Sorry about that. It won't happen
+                again
             </p>
         </div>
         <div class="visitor-counter slate">
@@ -88,25 +92,32 @@
                     src="https://www.cutercounter.com/hits.php?id=hxpaqcn&nd=4&style=13" alt="visitor counter"></a>
             visitors to this site!
         </div>
+        <div class="slate-scroll change-log retro-scrollbar">
+            <ul>
+                <li>
+                    <strong>
+                        3/24/2024
+                    </strong>
+                    This update I added this here update log and maybe a webring :)
+                </li>
+                <li>
+                    <strong>
+                        3/23/2024
+                    </strong>
+                    This update I tried to fix some exploits and bugs and accidentally deleted the databases in the
+                    process. Apologies for this blunder, I have established a test version of the site so I don't
+                    accidentally explode the main one when I try to fix things.
+                </li>
+                <li>
+                    <strong>
+                        3/22/2024
+                    </strong>
+                    I released The Daily Checkers to the public! The first ever move was made by amogus and they used
+                    inspect element to cheat and move their entire first row forward in one turn XD.
+                </li>
+            </ul>
+        </div>
     </main>
-    <div class="absolute-goof hidden">
-        <div class="logo-outer">
-            <img src="./img/checkerBoardSpriteTile45Deg.png" alt="" class="slanted-board">
-            <div class="piece-1"></div>
-            <p class="daily">The Daily</p>
-            <img class="clock" src="./img/clock.gif" alt="A ticking clock">
-            <p class="checkers">Checkers</p>
-            <div class="piece-2"></div>
-        </div>
-        <div class="logo-outer vertical">
-            <img src="./img/checkerBoardSpriteTileNeg45Deg.png" alt="" class="slanted-board">
-            <div class="piece-1"></div>
-            <p class="daily">The Daily</p>
-            <img class="clock" src="./img/clock.gif" alt="A ticking clock">
-            <p class="checkers">Checkers</p>
-            <div class="piece-2"></div>
-        </div>
-    </div>
 </body>
 
 </html>

@@ -3,12 +3,17 @@ window.onload = () => {
         let logoutButton = document.getElementById('log-out-button');
         logoutButton.classList.add('hidden');
         let gamesButton = document.getElementById('games-button');
-        gamesButton.classList.add('hidden');
+        gamesButton.classList.add('disabled');
         let profileButton = document.getElementById('profile-button');
-        profileButton.classList.add('hidden');
+        profileButton.classList.add('disabled');
         let inviteButton = document.getElementById('invite-button');
-        inviteButton.classList.add('hidden');
+        inviteButton.classList.add('disabled');
     } else {
+        let registerButton = document.getElementById('register-button');
+        registerButton.classList.add('hidden');
+        let loginButton = document.getElementById('login-button');
+        loginButton.classList.add('hidden');
+
         let loggedInBar = document.getElementById('logged-in-bar');
         let loggedOutBar = document.getElementById('logged-out-bar');
         loggedInBar.classList.remove('hidden');

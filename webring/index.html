@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- anti caching measures -->
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="../css/retro98Scrollbar.css">
+    <script src="../js/global_tools.js" defer></script>
+    <link rel="stylesheet" href="../css/css_reset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blaka+Hollow&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Checkers</title>
+    <link rel="stylesheet" href="./webring.css">
+    <link rel="stylesheet" href="daily-checkers-logo.css">
+    <script src="./webring.js" defer></script>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%22-0.1em%22 y=%22.9em%22 font-size=%2290%22>⏰</text></svg>">
+    </link>
+    <link rel="stylesheet" href="./onionring.css">
+    <script type="text/javascript" src="./onionring-variables.js" defer></script>
+    <script type="text/javascript" src="./onionring-index.js" defer></script>
+</head>
+
+<body>
+    <p id="profile-button" class="button profile" onclick="window.location.href='profile.html'">Profile</p>
+    <p id="invite-button" class="button invites" onclick="window.location.href='invites.html'">Invites</p>
+    <p id="games-button" class="button games" onclick="window.location.href='games.html'">Games</p>
+    <p id="webring-button" class="button webring disabled">Webring</p>
+    <p id="register-button" class="button register submit" onclick="window.location.href = 'register.html'">Register</p>
+    <p id="login-button" class="button login" onclick="window.location.href = 'login.html'">Log In</p>
+    <p id="log-out-button" class="button logout" onclick="handleLogoutClicked()">Log Out</p>
+    <main class="retro-scrollbar">
+        <div class="logo-outer">
+            <img src="../img/checkerBoardSpriteTile45Deg.png" alt="" class="slanted-board">
+            <div class="piece-1"></div>
+            <p class="daily">The Daily</p>
+            <img class="clock" src="../img/clock.gif" alt="A ticking clock">
+            <p class="checkers">Checkers</p>
+            <div class="piece-2"></div>
+            <p id="webring-subtitle">Webring</p>
+        </div>
+        <div class="slate welcome">
+            <h3>Welcome!</h3>
+            <h4 class="center-text">
+                This webring is for anyone who is a part of The Daily Checkers! <br /> Joining it takes 3 easy steps:
+            </h4>
+            <ol>
+                <li>
+                    <a href="../register.html">Register</a> for an account on The Daily Checkers
+                </li>
+                <li>
+                    Add the webring widget to your website
+                </li>
+                <li>
+                    Enter the URL of the page you put the widget on into the form below
+                </li>
+            </ol>
+        </div>
+        <div class="row">
+            <div>
+                <h2>The Widget</h2>
+                <div id='the-daily-checkers'>
+                    <script type="text/javascript" src="./onionring-variables.js"></script>
+                    <script type="text/javascript" src="./onionring-widget.js"></script>
+                </div>
+            </div>
+            <div id="widget-box" class="slate">
+                <h3>The Code <span class="small">(Click to copy)</span></h3>
+                <h4>HTML Widget:</h4>
+                <code class="code-block retro-scrollbar">
+                    &lt;div id=&#39;the-daily-checkers&#39;&gt;<br />
+                    &lt;script type=&quot;text/javascript&quot;
+                    src=&quot;http://daily-checkers.nekoweb.org/webring/onionring-variables.js&quot;&gt;&lt;/script&gt;<br />
+                    &lt;script type=&quot;text/javascript&quot; src=&quot;http://daily-checkers.nekoweb.org/webring/onionring-widget.js&quot;&gt;&lt;/script&gt;<br />
+                    &lt;/div&gt;
+                </code>
+                <h4>Link to Widget CSS <span class="small">(Goes in your head tag )</span>:</h4>
+                <code class="code-block">
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://daily-checkers.nekoweb.org/webring/onionring.css&quot;&gt;
+                </code>
+            </div>
+        </div>
+        <div class="form-section row">
+            <h2>The Form:</h2>
+            <form id="webring-join-form" class="slate">
+                <h4>Join the Webring:</h4>
+                <label for="webring-url">URL of your website:</label>
+                <input type="text" id="webring-url" name="webring-url" required>
+                <div class="submit button">Submit</div>
+            </form>
+            <form id="webring-update-form" class="slate">
+                <h4>Change Your URL:</h4>
+                <label for="webring-url">URL of your website:</label>
+                <input type="text" id="webring-url" name="webring-url" required>
+                <div class="submit button">Submit</div>
+            </form>
+            <form id="webring-leave-form" class="slate">
+                <h4>Leave the Webring:</h4>
+                <label for="webring-url">Confirm URL of your website:</label>
+                <input type="text" id="webring-url" name="webring-url" required>
+                <div class="button cancel">Leave</div>
+            </form>
+        </div>
+        <div class="row" id="members">
+            <h2>Members:</h2>
+            <div id="index">
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
